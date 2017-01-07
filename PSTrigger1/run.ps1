@@ -1,4 +1,4 @@
-<#$requestBody = Get-Content $req -Raw | ConvertFrom-Json
+$requestBody = Get-Content $req -Raw | ConvertFrom-Json
 $name = $requestBody.name
 
 if ($req_query_name) 
@@ -7,8 +7,8 @@ if ($req_query_name)
 }
 
 Out-File -Encoding Ascii -FilePath $res -inputObject "Hello $name"
-#>
+
 
 . "D:\home\site\wwwroot\PSTrigger1\bin\Add-Numbers.ps1"
 
-Add-Numbers 4 6
+Add-Numbers $in.a $in.b
