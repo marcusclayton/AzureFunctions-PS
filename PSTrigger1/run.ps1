@@ -1,5 +1,5 @@
-$requestBody = Get-Content $req -Raw | ConvertFrom-Json
-$name = $requestBody.name
+$in = Get-Content $req -Raw | ConvertFrom-Json
+$name = $in.name
 
 if ($req_query_name) 
 {
